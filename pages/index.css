@@ -1,0 +1,552 @@
+.initView {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.startButton {
+    height: 50px;
+    width: 300px;
+    border: 1px solid #28a628;
+    border-radius: 5px;
+    margin: 10px;
+    background: white;
+    font-size: 20px;
+}
+
+.startButton:hover {
+    color: white;
+    background-color: #28a628;
+}
+
+.container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+}
+
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    margin: auto;
+}
+
+.item {
+    position: absolute;
+    font-size: 24px;
+    font-family: "Microsoft YaHei UI", serif;
+    font-weight: bold;
+    opacity: 0;
+    align-items: center;
+    z-index: 100;
+}
+
+.audioButton {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+
+.playingButton {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity50 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityHalf {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*字体加粗加大*/
+@keyframes boldIn {
+    0% {
+        opacity: 0;
+        font-size: 24px;
+        font-weight: lighter;
+    }
+    30% {
+        opacity: 100%;
+        font-size: 60px;
+        font-weight: bold;
+    }
+    100% {
+        opacity: 100%;
+        font-size: 60px;
+        font-weight: bold;
+    }
+}
+
+/*从上到下淡入*/
+@keyframes topIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%)
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*从上到下淡出*/
+@keyframes topOut {
+    0% {
+        opacity: 1;
+        transform: translateY(-50%)
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%)
+    }
+}
+
+@keyframes topInAndOut {
+    0% {
+        transform: translateY(-100%)
+    }
+    50% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes topInAndBottomOut {
+    0% {
+        transform: translateY(-100%)
+    }
+    50% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(100%)
+    }
+}
+
+@keyframes bottomInAndTopOut {
+    0% {
+        transform: translateY(100%)
+    }
+    50% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(-100%)
+    }
+}
+
+/*从下到上淡入,再淡出*/
+@keyframes bottomInAndOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%)
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*旋转*/
+@keyframes rotate {
+    0% {
+        opacity: 0;
+        rotate: 0deg;
+    }
+    100% {
+        opacity: 1;
+        rotate: 360deg;
+    }
+}
+
+@keyframes rotate30 {
+    0% {
+        rotate: 30deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+/*从左到右淡出*/
+@keyframes leftIn {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
+/*放大*/
+@keyframes scale {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*放大*/
+@keyframes scaleMore {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(10);
+    }
+}
+
+/*旋转进入 */
+@keyframes rotateIn {
+    0% {
+        transform: rotate(0deg);
+
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+/*左斜到又斜*/
+@keyframes leftToRight {
+    0% {
+        transform: skewX(-30deg) translateY(-100%);
+    }
+    30% {
+        transform: skewX(0deg);
+    }
+    50% {
+        transform: skewX(0deg) translateY(0);
+    }
+    70% {
+        transform: skewX(0deg);
+    }
+    100% {
+        transform: skewX(30deg) translateY(100%);
+    }
+}
+
+/*右斜到左斜*/
+@keyframes rightToLeft {
+    0% {
+        transform: skewX(30deg) translateY(-100%);
+    }
+    30% {
+        transform: skewX(0deg);
+    }
+    50% {
+        transform: skewX(0deg) translateY(0);
+    }
+    70% {
+        transform: skewX(0deg);
+    }
+    100% {
+        transform: skewX(-30deg) translateY(100%);
+    }
+}
+
+/*打字效果*/
+@keyframes typingAndDeleting {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        width: 100%;
+    }
+    100% {
+        width: 0;
+        opacity: 1;
+    }
+}
+
+/*text4Adjective 颜色渐变*/
+@keyframes text4Adjective {
+    0% {
+        background: white;
+        color: black;
+    }
+    20% {
+        opacity: 1;
+        background: white;
+        color: black;
+    }
+    50% {
+        opacity: 1;
+        background: skyblue;
+        color: white;
+    }
+    100% {
+        opacity: 1;
+        background: skyblue;
+        color: white;
+    }
+}
+
+
+@keyframes flip {
+    0% {
+        transform: perspective(600px) rotateY(180deg);
+        opacity: 1;
+    }
+    20% {
+        transform: perspective(600px) rotateY(360deg);
+        opacity: 1;
+    }
+    50% {
+        transform: perspective(600px) rotateY(180deg);
+        opacity: 1;
+    }
+    70% {
+        transform: perspective(600px) rotateY(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(600px) rotateY(360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: black;
+    }
+    20% {
+        color: deeppink;
+    }
+    100% {
+        color: deeppink;
+    }
+}
+
+.greeting {
+    font-size: 4.5rem;
+    animation: opacityHalf;
+    /*animation: flip;*/
+    top: 40%;
+}
+
+.greetingText {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    animation: topIn;
+    top: 60%
+}
+
+.text1 {
+    font-size: 40px;
+    font-weight: bold;
+    animation: topIn
+}
+
+.textInChatBox {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2rem;
+    animation: typingAndDeleting steps(24, end);
+    text-align: center;
+}
+
+.text2 {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: leftToRight, opacityHalf;
+}
+
+.text3 {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: leftToRight, opacityHalf;
+}
+
+.text4 {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: topIn, opacityHalf;
+}
+
+.text4Adjective {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: text4Adjective;
+
+    background: skyblue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    top: 60%;
+}
+
+.text5Entry {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: leftIn, opacityHalf;
+}
+
+.text5Content {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: topIn, opacityHalf;
+}
+
+.smiley {
+    font-size: 2rem;
+    font-weight: normal;
+    top: 70%;
+    animation: rotateIn, opacityHalf;
+}
+
+.bigTextPart1 {
+    font-size: 15rem;
+    font-weight: normal;
+    animation: rotate30, opacity50;
+    left: 40%;
+}
+
+.bigTextPart2 {
+    font-size: 15rem;
+    font-weight: normal;
+    animation: rotate30, opacity50;
+    right: 60%;
+}
+
+@keyframes ImageOpacity {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.img {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: scale, ImageOpacity;
+    top: 10%;
+    height: 30%;
+    z-index: 100;
+}
+
+.wishHeading {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: flip;
+    top: calc(90% + 20px);
+}
+
+.wishText {
+    font-size: 1.5rem;
+    font-weight: normal;
+    animation: topIn;
+    top: calc(90% + 80px);
+    color: deeppink;
+}
+
+.outroText {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: opacityHalf;
+    transform: translateY(-100%);
+}
+
+.replayText {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: opacityHalf;
+}
+
+.outroSmiley {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: opacityHalf;
+    transform: translateY(100%);
+}
+
+@keyframes scaleMore {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(20);
+    }
+}
+
+@keyframes opacityHalf {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.ball {
+    font-size: 2rem;
+    font-weight: lighter;
+    animation: scaleMore infinite, opacityHalf infinite;
+    z-index: -1;
+}
